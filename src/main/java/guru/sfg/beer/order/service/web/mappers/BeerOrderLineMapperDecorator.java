@@ -22,7 +22,7 @@ public abstract class BeerOrderLineMapperDecorator implements BeerOrderLineMappe
     public void setBeerOrderLineMapper(BeerOrderLineMapper beerOrderLineMapper){this.beerOrderLineMapper= beerOrderLineMapper;}
 
     @Override
-    public BeerOrderLineDto beerOrderLinetoDto(BeerOrderLine line){
+    public BeerOrderLineDto beerOrderLineToDto(BeerOrderLine line){
         BeerOrderLineDto orderLineDto = beerOrderLineMapper.beerOrderLineToDto(line);
         Optional<BeerDto> beerDtoOptional = beerService.getBeerByUpc(line.getUpc());
 
