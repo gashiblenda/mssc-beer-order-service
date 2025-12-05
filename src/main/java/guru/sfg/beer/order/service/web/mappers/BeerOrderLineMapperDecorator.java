@@ -19,7 +19,9 @@ public abstract class BeerOrderLineMapperDecorator implements BeerOrderLineMappe
 
     @Autowired
     @Qualifier("delegate")
-    public void setBeerOrderLineMapper(BeerOrderLineMapper beerOrderLineMapper){this.beerOrderLineMapper= beerOrderLineMapper;}
+    public void setBeerOrderLineMapper(BeerOrderLineMapper beerOrderLineMapper) {
+        this.beerOrderLineMapper = beerOrderLineMapper;
+    }
 
     @Override
     public BeerOrderLineDto beerOrderLineToDto(BeerOrderLine line){
@@ -34,7 +36,5 @@ public abstract class BeerOrderLineMapperDecorator implements BeerOrderLineMappe
         });
 
         return orderLineDto;
-
     }
-
 }

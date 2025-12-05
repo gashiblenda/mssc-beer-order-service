@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -30,6 +31,6 @@ public class BeerDto {
     private String upc;
     private Integer quantityOnHand;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING)
+    @JsonFormat(shape= JsonFormat.Shape.STRING)
     private BigDecimal price;
 }

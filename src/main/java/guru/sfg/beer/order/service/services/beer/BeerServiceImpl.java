@@ -34,5 +34,7 @@ public class BeerServiceImpl implements BeerService{
         return Optional.of(restTemplate.getForObject(beerServiceHost + BEER_UPC_PATH_V1 + upc, BeerDto.class));
     }
 
-    public void setBeerServiceHost(String beerServiceHost){ this.beerServiceHost = beerServiceHost;}
+    public void setBeerServiceHost(String beerServiceHost) {
+        this.beerServiceHost = beerServiceHost;
+    }
 }
