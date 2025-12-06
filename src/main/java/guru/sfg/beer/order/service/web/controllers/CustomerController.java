@@ -1,7 +1,7 @@
 package guru.sfg.beer.order.service.web.controllers;
 
 import guru.sfg.beer.order.service.services.CustomerService;
-import guru.sfg.brewery.model.CustomerPagedList;
+import guru.sfg.beer.order.service.web.model.CustomerPagedList;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
