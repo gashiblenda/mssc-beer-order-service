@@ -21,20 +21,20 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class CustomerServiceImpl implements CustomerService {
 
-    private final CustomerRepository customerRepository;
-    private final CustomerMapper customerMapper;
+	private final CustomerRepository customerRepository;
+	private final CustomerMapper customerMapper;
 
-    @Override
-    public CustomerPagedList listCustomers(Pageable pageable) {
+	@Override
+	public CustomerPagedList listCustomers(Pageable pageable) {
 
-        Page<Customer> customerPage = customerRepository.findAll(pageable);
+		Page<Customer> customerPage = customerRepository.findAll(pageable);
 
-        return new CustomerPagedList(customerPage
-                        .stream()
-                        .map(customerMapper::customerToDto)
-                        .collect(Collectors.toList()),
-                    PageRequest.of(customerPage.getPageable().getPageNumber(),
-                        customerPage.getPageable().getPageSize()),
-                        customerPage.getTotalElements());
-    }
+		return new CustomerPagedList(customerPage
+				.stream()
+				.map(customerMapper::customerToDto)
+				.collect(Collectors.toList()),
+				PageRequest.of(customerPage.getPageable().getPageNumber(),
+						customerPage.getPageable().getPageSize()),
+				customerPage.getTotalElements());
+	}
 }

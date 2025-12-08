@@ -31,12 +31,12 @@ import java.util.UUID;
 /**
  * Created by jt on 2019-01-26.
  */
-public interface BeerOrderRepository  extends JpaRepository<BeerOrder, UUID> {
+public interface BeerOrderRepository extends JpaRepository<BeerOrder, UUID> {
 
-    Page<BeerOrder> findAllByCustomer(Customer customer, Pageable pageable);
+	Page<BeerOrder> findAllByCustomer(Customer customer, Pageable pageable);
 
-    List<BeerOrder> findAllByOrderStatus(BeerOrderStatusEnum orderStatusEnum);
+	List<BeerOrder> findAllByOrderStatus(BeerOrderStatusEnum orderStatusEnum);
 
-   // @Lock(LockModeType.PESSIMISTIC_WRITE)
-   // BeerOrder findOneById(UUID id);
+	// @Lock(LockModeType.PESSIMISTIC_WRITE)
+	// BeerOrder findOneById(UUID id);
 }

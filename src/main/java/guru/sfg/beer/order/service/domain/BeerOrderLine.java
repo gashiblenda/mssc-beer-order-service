@@ -1,4 +1,3 @@
-
 package guru.sfg.beer.order.service.domain;
 
 import lombok.Builder;
@@ -18,23 +17,23 @@ import java.util.UUID;
 @Entity
 public class BeerOrderLine extends BaseEntity {
 
-    @Builder
-    public BeerOrderLine(UUID id, String upc, Long version, Timestamp createdDate, Timestamp lastModifiedDate,
-                         BeerOrder beerOrder, UUID beerId, Integer orderQuantity,
-                         Integer quantityAllocated) {
-        super(id, version, createdDate, lastModifiedDate);
-        this.beerOrder = beerOrder;
-        this.upc = upc;
-        this.beerId = beerId;
-        this.upc = upc;
-        this.orderQuantity = orderQuantity;
-        this.quantityAllocated = quantityAllocated;
-    }
+	@ManyToOne
+	private BeerOrder beerOrder;
+	private String upc;
+	private UUID beerId;
+	private Integer orderQuantity = 0;
+	private Integer quantityAllocated = 0;
 
-    @ManyToOne
-    private BeerOrder beerOrder;
-    private String upc;
-    private UUID beerId;
-    private Integer orderQuantity = 0;
-    private Integer quantityAllocated = 0;
+	@Builder
+	public BeerOrderLine(UUID id, String upc, Long version, Timestamp createdDate, Timestamp lastModifiedDate,
+	                     BeerOrder beerOrder, UUID beerId, Integer orderQuantity,
+	                     Integer quantityAllocated) {
+		super(id, version, createdDate, lastModifiedDate);
+		this.beerOrder = beerOrder;
+		this.upc = upc;
+		this.beerId = beerId;
+		this.upc = upc;
+		this.orderQuantity = orderQuantity;
+		this.quantityAllocated = quantityAllocated;
+	}
 }
