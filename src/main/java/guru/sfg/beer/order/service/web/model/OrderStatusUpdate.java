@@ -15,7 +15,7 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package guru.sfg.brewery.model;
+package guru.sfg.beer.order.service.web.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -32,21 +32,21 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 public class OrderStatusUpdate {
-    @JsonProperty("id")
-    private UUID id = null;
+	@JsonProperty("id")
+	private UUID id;
 
-    @JsonProperty("version")
-    private Integer version = null;
+	@JsonProperty("version")
+	private Integer version;
 
-    @JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ssZ", shape=JsonFormat.Shape.STRING)
-    @JsonProperty("createdDate")
-    private OffsetDateTime createdDate = null;
+	@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ssZ", shape = JsonFormat.Shape.STRING)
+	@JsonProperty("createdDate")
+	private OffsetDateTime createdDate;
 
-    @JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ssZ", shape=JsonFormat.Shape.STRING)
-    @JsonProperty("lastModifiedDate")
-    private OffsetDateTime lastModifiedDate = null;
+	@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ssZ", shape = JsonFormat.Shape.STRING)
+	@JsonProperty("lastModifiedDate")
+	private OffsetDateTime lastModifiedDate;
 
-    private UUID orderId;
-    private String customerRef;
-    private String orderStatus;
+	private UUID orderId;
+	private String customerRef;
+	private String orderStatus;
 }

@@ -1,6 +1,6 @@
 package guru.sfg.beer.order.service.services;
 
-import guru.sfg.brewery.model.CustomerPagedList;
+import guru.sfg.beer.order.service.web.model.CustomerPagedList;
 import org.springframework.data.domain.Pageable;
 
 /**
@@ -8,6 +8,6 @@ import org.springframework.data.domain.Pageable;
  */
 public interface CustomerService {
 
-    CustomerPagedList listCustomers(Pageable pageable);
+	CustomerPagedList listCustomers(Pageable pageable);
 
 }
