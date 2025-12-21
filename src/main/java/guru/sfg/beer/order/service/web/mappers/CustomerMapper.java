@@ -4,6 +4,9 @@ import guru.sfg.beer.order.service.domain.Customer;
 import guru.sfg.beer.order.service.web.model.CustomerDto;
 import org.mapstruct.Mapper;
 
+/**
+ * Created by jt on 3/7/20.
+ */
 @Mapper(uses = {DateMapper.class})
 public interface CustomerMapper {
 	CustomerDto customerToDto(Customer customer);
